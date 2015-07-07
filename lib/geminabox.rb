@@ -78,7 +78,7 @@ module Geminabox
     rubygems_proxy:       (ENV['RUBYGEMS_PROXY'] == 'true'),
     allow_delete:         true,
     http_adapter:         HttpClientAdapter.new,
-    lockfile:             '/tmp/geminabox.lockfile',
+    lockfile:             "#{ENV['TMP_DIR'] || '/tmp'}/geminabox.lockfile",
     retry_interval:       60,
     allow_remote_failure: false
   )
